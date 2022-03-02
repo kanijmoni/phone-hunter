@@ -18,10 +18,10 @@ const allPhones = () => {
         .then(data => {
             if (data.data == null) {
                 document.getElementById("spinner").style.display = 'block';
-                console.log('No Phone Found');
+                alert("No Phone Found")
             }
             else {
-                displaySearchResult(data.data)
+                displaySearchResult(data.data.slice(0, 20))
                 document.getElementById("spinner").style.display = "none";
             }
         })
@@ -75,10 +75,10 @@ const displayDetailResult = (info) => {
     <h5 class="card-title">Name:${info.name}</h5>
     <h6 class="card-title">Release Date:${info.releaseDate}</h6>
     <h5 class="card-title">Brand:${info.brand}</h5>
-    <p class="card-text"><small>Storage:${info.mainFeatures.storage}</small><br>
-    <p class="card-text"><small>Display Size:${info.mainFeatures.displaySize}</small><br>
-    <p class="card-text"><small>Chip Set:${info.mainFeatures.chipSet}</small><br>
-    <p class="card-text"><small>Memory:${info.mainFeatures.memory}</small><br>
+    <p class="card-text">Storage:<small>${info.mainFeatures.storage}</small><br>
+    <p class="card-text">Display Size:<small>${info.mainFeatures.displaySize}</small><br>
+    <p class="card-text">Chip Set:<small>${info.mainFeatures.chipSet}</small><br>
+    <p class="card-text">Memory:<small>${info.mainFeatures.memory}</small><br>
     </p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
    </div>
