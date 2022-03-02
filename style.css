@@ -1,3 +1,7 @@
 .card2 {
    background-color:rgb(163, 238, 144)
 };
+
+#spinner {
+    display: none;
+}
